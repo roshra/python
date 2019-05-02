@@ -1,1 +1,44 @@
+Python 
 
+# Single line comments 
+Start with #
+
+# Multiline comments 
+These would consume memory , the memory is allocated 
+but garbage collection later removes it								
+Tripple double quotes """
+Tripple single quotes '''
+
+# Built in data types
+None Type
+Numeric Type
+Sequences 
+sets 
+Mappings 
+
+None Type : Data type does not conatin any value, in java its null object
+it can be used as default value of an argument
+if calling a function no value is passed, the default value will be null
+in boolean expression the null represetns as false
+
+Numeric Types:
+int , float , complex
+
+int is with out fractions , without decimals 
+it will contain the negative and positive numbers
+no limit in python to store the numbers
+a = -57
+
+float is with decimals
+num = 55.67998
+we can also use the exponentiation 
+2.5 * 10 power 4 can be written as 2.5E4
+x = 2.5E4 
+here x will be automatically taken as float data type
+
+complex numbers
+# python program to add two complex numbers
+c1 = 2.5 + 2.5J
+c2 = 3.0 - 0.5J
+sum = c1 + c2
+print("sum = ", sum)
