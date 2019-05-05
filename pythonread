@@ -173,4 +173,36 @@ for j in l:print(j)
 
 b = list(range(4))
 print(b)
+ 
+# Sets 
+set is unordered collection of elements much like a set in matematics
+order of elements is not maintained in set
+the elements may not appear in same way as they are entered into the set
+set do not accept duplicate values
+two subtypes :
+set datatype
+frozenset datatatype
+to create a set we should enter elements seperated by commas inside curly braces {}
+s = {10,20,30,40,50}
+print(s) 
+
+another method of creating set 
+# set converts a list to a set - using a set keyword
+ch = set('HELLO')
+print(ch)
+since sets are un-ordered we can not retrieve elements using indexing or slising 
+lst = [1,2,3,4,5]
+s = set(lst)
+print(s)
+
+
+update method in set :
+used to add two elements to the set 
+s.update[50,60]:
+print(s)
+
+remove method in set : 
+used to remove element off the set 
+s.remove(50)
+print(s)
 
