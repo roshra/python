@@ -131,6 +131,23 @@ print("printing 0th element in list ", list[0])
 print("printing 0th to 2nd elements in list ", list[0:3])
 print("printing last element of the list", list[-1])
 print("duplicating the list ", list * 2)
+list can be modified 
 
 # Tuple data type
+
+Tuple are like list and can have different data types
+Tuples are read only list and can't be modified 
+    tuple[0] = 80
+TypeError: 'tuple' object does not support item assignment
+
+# tuple is a mix of different data types enclosed in parentheses seperated by comans
+tuple = (10,-20,15.5, 'rosh', 'mary')
+print("first tuple element ", tuple[0])
+
+# tuple can't be modified and will give an error
+tuple[0] = 80
+
+Tuples are enclosed in parantheses 
+tuple(10,-20,15.5,'rosh',"mary")
+
 
