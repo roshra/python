@@ -150,4 +150,27 @@ tuple[0] = 80
 Tuples are enclosed in parantheses 
 tuple(10,-20,15.5,'rosh',"mary")
 
+# Range data type
+represents sequence of numbers
+the numbers in range are not modifiable
+range is used for repeating for loop for specific number of times
+r = range(10)
+for i in r: print(r)
+above statement will display 0 to 9
+
+another usage:
+we can also use starting number
+ending number and step value in range object
+r = range(30,40,2)
+for i in r: print(r)
+range object with starting number 30 and ending number 39
+the step size is 2
+r = range(10)
+for i in r: print(i)
+
+l = range(30,40,2)
+for j in l:print(j)
+
+b = list(range(4))
+print(b)
 
