@@ -104,3 +104,33 @@ x = bytes(elements)
 print("list now convered to byte array ", x[0])
 for i in x: print(i)
 
+# Bytearray Data Type
+# The bytearray datatype is similar to bytes datatype
+# The bytes type array cannot be modified but the bytearray type can be modified
+# list of bytearray
+elements = [10,20,0,40]
+# list is now convered to bytearray
+x = bytearray(elements)
+print(elements[0])
+x[0] = 80
+print ("value of first element is modified as ", x[0])
+for i in x: print(i)
+
+# list Data Type
+List of represents a group of elements
+Main difference between the list and array is 
+a list can store dofferent types of data 
+example 
+list = [10,20,15.5, 'rosh', "mary"]
+slicing operation [0:3] represents elements from 0th to 2nd element
+10,20,15.5
+
+list = [10,20,15.5,"rosh", 'mary']
+print("printing all the elements in list ",list)
+print("printing 0th element in list ", list[0])
+print("printing 0th to 2nd elements in list ", list[0:3])
+print("printing last element of the list", list[-1])
+print("duplicating the list ", list * 2)
+
+# Tuple data type
+
