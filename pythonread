@@ -290,4 +290,8 @@ print ("print using enter will not print here this line \r ", s1)
 print ("print using tab \t ", s1)
 print ("print using virtical tab \v ", s1)
 print ("print using backspace \n ", s1)
+
+# Determining data types
+a = 15
+print(type(a))
  
