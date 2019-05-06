@@ -1,0 +1,10 @@
+s1 = "This is \n python "
+print("print using new line continuation \n" , s1)
+print("print using new line continuation \\ displays single \ " , s1)
+print ("print using single quote \' ", s1)
+print ("print using single quote \" ", s1)
+print ("print using backspace \b ", s1)
+print ("print using enter will not print here this line \r ", s1)
+print ("print using tab \t ", s1)
+print ("print using virtical tab \v ", s1)
+print ("print using backspace \n ", s1)
