@@ -206,3 +206,46 @@ used to remove element off the set
 s.remove(50)
 print(s)
 
+# frozenset data type
+same as set datatype
+the element in set can be modified but elements in frozenset datatype can't be modified
+s = {10,20,30,40,40}
+print(s)
+fs = frozenset(s)
+print("printing frozenset data type ", fs)
+
+fs1 = frozenset("hello")
+print("printing another way of initiating frozenset ", fs1)
+
+frozenset works exactly same as set but with above differences 
+update and remove methods wont work on frozenset data type
+
+# Mapping Types
+Map represents a group of elements in form of key:value pair
+dict data typ is example of map
+dict represents dictionary
+key and value should be seperated by colon
+every par should be seperated by comma
+all elements shouls be inside curly braces
+d = {10:'rosh', 11:'dan', 12:'puppy'}
+d is dictionary , 10 is key and rosh is value associated with key
+
+we can also create empty dictionary 
+d = {}
+update key:value pair in empty d
+d[10] = 'rosh'
+d[11] = 'puppy'
+print(d)
+ 
+Delete key:
+del d[10]
+
+d = {}
+d[1] = 'rosh'
+d[2] = 'putty'
+d[3] = 'camy'
+print("printing dictionary d ", d)
+print("printing all dictionary keys " , d.keys())
+print("printing all dictionary values ", d.values())
+del d[1]
+print("printing dictionary post deletion of a pair ", d)
