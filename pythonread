@@ -294,4 +294,12 @@ print ("print using backspace \n ", s1)
 # Determining data types
 a = 15
 print(type(a))
- 
+
+
+# Python file handeling , create , open , append , read , write 
+
+How to create a text file 
+f = open("guru99.txt", "w+")
+
+# Reference 
+https://docs.python.org/3/tutorial/: 
