@@ -460,10 +460,32 @@ found an even number 8
 found a number 9
 
 
+# Functions in python
+
+def fib(n):
+    a , b = 0 , 1
+    while a < n:
+        print(a, end=' ')
+        a , b = b , a+b
+    print()
+fib(2000)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597
+
+Def should be followed by function name and parenthesized list of parameters
+
+fib(2000)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 
+fib(100)
+0 1 1 2 3 5 8 13 21 34 55 89 
+fib(5)
+0 1 1 2 3 
+fib(0)
+
+
+It is simple to write a function that returns a list of the numbers of the Fibonacci series, instead of printing it:
 
 
 
-
-# Reference 
+Reference
 https://docs.python.org/3/tutorial/: 
 https://developers.google.com/edu/python/lists
