@@ -56,14 +56,23 @@ obj.display()
 # The methos is helpfu; to initialize the variables of class object 
 # __init__ accepts one argument val
 # like other class methods, first argument has to be self
-# the newly created variable self.val123 
-class ABC():
-    def __init__(self,val):
-        print("I am class method from class constructor..")
-	self.val123 = val
-	print("The value is : ", val)
-
-obj=ABC(510)
+# the newly created variable self.val123
 
 
 # class variable and object variable
+
+# Program to differentiate between class and object variables
+class myclass():
+    # class variable
+    class_var = 0
+    def __init__(self,var):
+        myclass.class_var += 1
+        print("value of early var is ", var)
+        # Object variable
+        self.rosh = var
+
+        print("The object value is ", var)
+        print("The value of class variable is : ", myclass.class_var)
+obj1 = myclass(10)
+obj1 = myclass(30)
+obj1 = myclass(40)
