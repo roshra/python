@@ -1,0 +1,36 @@
+#!/usr/bin/python3
+
+# Taxable income
+# if income is less than 150000 then no tax
+# if income is 150001 - 300000 then charge 10% tax
+# if income is 300001 - 500000 then charge 20 % tax
+# if income is 500001 then charge 30% tax
+
+MIN1=150000
+MAX1= 300000
+RATE1= 0.10
+
+MIN2= 300001
+MAX2= 500000
+RATE2= 0.20
+ 
+MIN3= 500000
+RATE3= 0.30
+
+INCOME = int(input("Enter income: "))
+taxable_income = INCOME - 150000
+
+if (taxable_income <= 0):
+    print("No Tax")
+elif (taxable_income >=MIN1 and taxable_income <= MAX1):
+    tax = (taxable_income - MIN1) * RATE1
+    print(tax)
+
+elif (taxable_income >=MIN2 and taxable_income <= MAX2):
+    tax = (taxable_income - MIN2) * RATE2
+    print(tax)
+else:
+    tax = (taxable_income - MIN3) * RATE3
+    print(tax)
+
+

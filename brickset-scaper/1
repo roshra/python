@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+from bs4 import BeautifulSoup
+import requests
+ 
+url = 'https://www.vibgyor-online.com/vibv1/shtmlv4/04.aspx'
+url_get = requests.get(url)
+print(url_get)
+soup = BeautifulSoup(url_get.content, 'lxml')
+print(soup)
+col = soup.find('div', class_="imgNoticeboard")

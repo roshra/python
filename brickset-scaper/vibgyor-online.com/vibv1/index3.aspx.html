@@ -1,0 +1,896 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>i-Campus buddy</title>
+    
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="400" name="MobileOptimized">
+    
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport">
+    <meta http-equiv="imagetoolbar" content="no" />
+    
+    <link href="shtmlv4/css/commonth1.css" rel="stylesheet" type="text/css" />
+    <link href="shtmlv4/css/login.css" rel="stylesheet" type="text/css" />
+    
+    <script type="text/javascript" src="shtmlv4/js/jquery-1.txt"></script>
+    <script type="text/javascript" src="shtmlv4/js/jquery-ui-1.9.1.custom.min.js"></script> 
+           
+
+    <script src="shtmlv4/js/cookie-plugin.js" type="text/javascript"></script>
+    
+    <!-- <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"/> -->
+     <style>
+     #popupp {
+            display:none;
+            position:absolute;
+            margin:0 auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+    }
+     </style>
+     <link rel="stylesheet" href="shtmlv4/css/colorbox.css" />
+		<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+		<script src="shtmlv4/js/jquery.colorbox.js"></script>
+</head>
+<body onLoad="load_em();">
+<!-- <p><a class="group1" href="vibbrand.png" title=""></a></p> working-->
+<p><a class='group1' href='https://www.youtube.com/watch?v=ik6rRqmmxoE'></a></p>
+<div id="popupp">
+<!-- Now this is the button which closes the popup-->
+    <button id="close">Close button</button>
+<!-- and here comes the image -->
+<img src="vibbrand.png" alt="popup" width="85%">
+
+    
+
+    <!-- and finally we close the POPUP FRAME-->
+    <!-- everything on it will show up within the popup so you can add more things not just an image -->
+</div>
+
+    <div align="center">
+    <div>
+    <div id="dvpopup" style="display:none;position:fixed;z-index:10000;" data-position="fixed">
+            <div class="loaderml" ></div>
+            <div class="loadermail" align=center>
+                <img  id ="loaderimg" border="0" src="shtmlv4/images/ajax_loader2.gif" alt="Back"/>
+            </div>
+             
+        </div>
+		<div id="dvSavedSuccesfully" style="display:none;">
+			<div class="popup" style="height:135px; width:400px; left:450px; top:265px; z-index:1005;">
+				<div class="dvhdrow" style="float:left; padding:05px 0 0 0; width:99%;">
+					<hr class="spseparatermain" />
+					<hr class="spseparatermain" />
+				</div>
+				
+				 <div class="" style="">
+					 <div id="" class="lable_content" style="width:99%; text-align:center; word-wrap:break-word; padding: 33px 0 15px 0;">
+						<div id="dvmsgpopup"></div>
+						<br />
+					</div>
+					<input type="button" id="" class="btnstyle1" style="margin:0; width:90px; height:30px; float:none;" value="OK" onclick="javascript:document.getElementById('dvSavedSuccesfully').style.display = 'none';"/>
+				</div>
+			</div>
+			<div class="popupbg" style="z-index:1004;"> </div>
+		</div>
+        <div id="dvYesNoConfirmation" style="display:none;">
+                            <div class="popup" style="height:205px; width:600px; left:388px; top:240px; z-index:1003; padding-top:10px;">
+                                <div class="lable_heading" style="padding-left:12px; width:96%;">
+                                           <span style="float:left;">Forgot Password</span> 
+                                            <div style="float:right;">
+                                                <img  src="SHTMLV4/images/pop_close.png" style="cursor:pointer;" onclick="javascript:$('#dvYesNoConfirmation').hide();cleardata();" />
+                                            </div>
+                                        </div>
+                                <div class="dvhdrow" style="float:left; padding:05px 0 0 0; width:99%;">
+                                    <hr class="spseparatermain" />
+                                    <hr class="spseparatermain" />
+                                </div>
+                                
+                                 <div class="dvrow" style="display:none;">
+                                     
+                                     <div class="lable_content" style="width:25%; padding-top:07px;">
+                                            Security Question :
+                                        </div>
+                                        <select id="cboquestion" class="cbostyle1" style="width:72%;">
+                                        
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="dvrow" style="display:none;">
+                                        <div class="lable_content" style="width:26%; padding-top:03px;">
+                                            Security Answer :
+                                        </div>
+                                        
+                                        <input type="text" id="txtans"  placeholder="" required="" class="txtstyle1" style="width:70%;"/>
+                                   </div>
+                                  
+                                  <div class="dvrow" style="">
+                                    <div class="lable_content" style="width:26%; padding-top:03px;">
+                                        UserName :
+                                    </div>
+                                    
+                                    <input type="text" id="txtusername" maxlength="25" placeholder="" required="" class="txtstyle1" style="width:60%;"/>
+                               </div>
+                               <hr class="spseparater" />
+                               <div class="dvrow" style="">
+                                    <div class="lable_content" style="width:26%; padding-top:03px;">
+                                        Email ID :
+                                    </div>
+                                    
+                                    <input type="text" id="txtemailid" maxlength="150" placeholder="" required="" class="txtstyle1" style="width:60%;"/>
+                               </div>
+                              <div class="dvrow" style="">
+                                        <span class="note_txt" style="float:left; padding:8px 0 0 0;">
+                                            If you forgot Email ID and Username Kindly Contact School Administrator.
+                                        </span>
+                                        <input type="button" id="submit_personal"  class="btnstyle1" style="float:right; margin:10px 12px 10px 0;" value="Submit" onclick="validateForgotpassNew(); return false;"/>
+                                   </div>
+                            </div> 
+                            <div class="popupbg"  onclick="javascript:$('#dvYesNoConfirmation').hide();cleardata();"> </div>
+                        </div>  
+        <script type="text/javascript">
+            function showloader()
+            {
+                document.getElementById('dvpopup').style.display = "block";
+            
+            }
+            function hideloader()
+            {
+            
+                document.getElementById('dvpopup').style.display = "none";
+            
+            }
+            showloader();
+            function load_em(){
+            
+               if (iscookiesenabled())
+               { 
+                   var u = $.cookie("CKusername"); //"USERNAME" COOKIE
+                   var p = $.cookie("CKpassword"); //"PASSWORD" COOKIE
+
+                   $("#username").val(u); //FILLS WITH "USERNAME" COOKIE
+                   $("#password").val(p); //FILLS WITH "PASSWORD" COOKIE
+                }
+            }
+            function iscookiesenabled()
+            {
+                var TEST_COOKIE = 'test_cookie';
+                $.cookie( TEST_COOKIE, true );
+                if ( $.cookie ( TEST_COOKIE ) )
+                {
+                  $.cookie( TEST_COOKIE, null );  // delete the cookie
+                  return true;
+                }
+                else
+                {
+                  return false;
+                }
+            }
+        </script>
+        <div id="dvheaderbg">
+            <div id="dvheader">
+                <div id="dvheader-logolink">
+                    
+					<!--<a href="http://vibgyor-online.com/vibv1/" target="_blank">-->
+					   <!-- <a href="Javascript:CheckUsername();" target="_blank">-->
+					    <a href="Javascript:validatelogin();" target="_blank">
+                        <div id="dverplogo" style="margin-left : 02px;"></div>
+                     </a>
+                     <a href="http://vibgyorhigh.com" target="_blank">
+                        <div id="dvschlogo" style="margin-left : 0px; margin-right : 08px;"></div>
+                     </a>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="dvmenubg" style="min-height:inherit;">
+            <div id="dvmenu" style="display:none;">
+                <div id="outer-main-menu">
+                    
+                </div>
+            </div>
+        </div>
+        <div id="dvContent" data-role="content">
+            <div class="dvlogin">
+                <div id="content2">
+		            <form action="index3.aspx.html">
+			           
+			            <div>
+				            <input type="text" placeholder="Username" required="" id="username" value="" maxlength="50"/>
+			            </div>
+			            <div>
+				            <input type="password" placeholder="Password" required="" id="password" value="" maxlength="20"/>
+			            </div>
+                        <div style="float: left; margin-left: -370px; margin-top: 65px;" id="dvrememberme">
+                            <label style="text-decoration:underline;font-weight:bold;font-size:12px;cursor:pointer;color:#de2203;vertical-align:top;"><input id="check" name="rememberme" value="remember" type="checkbox" />Remember me</label>
+                        </div>
+			            <div style="margin-left:140px;">
+				            <input type="button" id="submit" class="" value="" onclick="validatelogin(); return false;"/>
+			            </div>
+			            <div style="float: left;margin-left: -98px;margin-top:0px;" id="dvfrgpass">
+				            <label id="frgpass" onclick="Javascript:showforgotpass();" style="text-decoration:underline;font-weight:bold;font-size:12px;cursor:pointer;color:#de2203;">Forgot Password?</label>
+			            </div>
+			            
+			            <div style="display:none;">
+                            <table align="center"><tbody> 
+                            <tr> 
+                                <td align="center" style="color: #33ccff; font-size: large; font-weight: bold; text-transform: capitalize;"></td></tr> 
+                            <tr> 
+                                <td align="center" style="margin-top: 350px;">
+                                /*<script type="text/javascript">
+                                // Load the SDK Asynchronously 
+                                (function (d) {
+                                    var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+                                    if (d.getElementById(id)) { return; }
+                                    js = d.createElement('script'); js.id = id; js.async = true;
+                                    js.src = "//connect.facebook.net/en_US/all.js";
+                                    ref.parentNode.insertBefore(js, ref);
+                                } (document));
+                                 
+                                // Init the SDK upon load
+                                window.fbAsyncInit = function () {
+                                    FB.init({
+                                        appId: '249559258578102', // App ID 
+                                        channelUrl: '//' + window.location.hostname + '/channel', // Path to your Channel File 
+                                        status: true, // check login status 
+                                        cookie: true, // enable cookies to allow the server to access the session 
+                                        xfbml: true  // parse XFBML 
+                                    });
+                                 
+                                    // listen for and handle auth.statusChange events 
+                                    FB.Event.subscribe('auth.statusChange', function (response) {
+                                        if (response.authResponse) {
+                                            // user has auth'd your app and is logged into Facebook 
+                                            FB.api('/me', function (me) {
+                                                if (me.name) {
+                                                    //document.getElementById('auth-displayname').innerHTML = me.name;
+                                                    DoFBlogin(me, true);
+                                                }
+                                            })
+                                            document.getElementById('auth-loggedout').style.display = 'none';
+                                            document.getElementById('auth-loggedin').style.display = 'block';
+                                        } else {
+                                            // user has not auth'd your app, or is not logged into Facebook 
+                                            document.getElementById('auth-loggedout').style.display = 'block';
+                                            document.getElementById('auth-loggedin').style.display = 'none';
+                                        }
+                                    });
+                                    $("#auth-logoutlink").click(function () { FB.logout(function () { window.location.reload(); }); });
+                                }
+                                </script> */
+                        <div id="auth-status"> 
+                        <div id="auth-loggedout"> 
+                        <div autologoutlink="true" class="fb-login-button" scope="email,user_checkins"> 
+                        Login with Facebook</div> 
+                        </div> 
+                        <div id="auth-loggedin" style="display: none;"> 
+                        Hi, <span id="auth-displayname">  Welcome to Dotnetfox </span> (<a href="index3.aspx.html#" id="auth-logoutlink">Signout</a>)</div> 
+                        </div> 
+                        </td> </tr> 
+                        </tbody> </table> 
+                            </div>
+			            
+		            </form>
+		            
+	            </div>
+            </div>
+            
+        </div>
+        <div id="dvfooter" data-role="footer" style="">
+			 <a href="index.html" target="_blank">
+                    <div id="dvpoweredby"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+     
+    <script type='text/javascript'>
+    
+    
+    $(document).ready(function() 
+    {
+/*
+    //select the POPUP FRAME and show it
+    $("#popupp").hide();//.dialog().fadeIn(1000);
+	
+	//$(".group1").colorbox({rel:'group1', height:"100%"});
+	$('.group1').colorbox({iframe: true, width: 640, height: 390, href:function(){
+        var videoId = new RegExp('[\\?&]v=([^&#]*)').exec(this.href);
+        if (videoId && videoId[1]) {
+            return 'http://youtube.com/embed/'+videoId[1]+'?autoplay=1&rel=0&wmode=transparent';
+        }
+    }});
+	$(".group1").click();
+	
+    //close the POPUP if the button with id="close" is clicked
+    $("#close").on("click", function (e) {
+        e.preventDefault();
+        $("#popup").fadeOut(1000);
+    });
+*/    
+        var code = "";
+        
+        hideloader();
+        $('#username').focus();
+        GetSecurityQuestions();
+       if (iscookiesenabled())
+       {
+            $('#dvrememberme').show();
+            $('#dvfrgpass').animate( {'margin-left':'-98px', 'margin-top': '0px'}, 0);
+       }
+       else
+       {
+            $('#dvrememberme').hide();
+            $('#dvfrgpass').animate( {'margin-left':'-113px', 'margin-top': '-30px'}, 0);
+       }
+    });
+    
+    $('#username').keypress(function(event) {
+      if (event.keyCode == '13') {
+        $('#password').focus();
+        event.preventDefault();
+      }
+    });
+    $('#password').keypress(function(event) {
+      if (event.keyCode == '13') {
+        $('#submit').click();
+        event.preventDefault();
+      }
+    });
+    
+    function showforgotpass()
+    {
+    
+        $("#dvYesNoConfirmation").show();
+    
+    }
+    function GetSecurityQuestions()
+    {
+                                      
+          var csdata = "";
+                
+          $.ajax({
+                type: "GET",
+                url: ('Data/XML/SecQues.xml'),
+                dataType: "xml",
+                success: function (doc) 
+                { 
+                    
+                    FillSecurityQuestions(doc);
+                },
+                error: function(a,b,c)
+                {
+                   
+                }
+        });
+    }
+    function FillSecurityQuestions(doc)
+    {
+        
+        $(doc).find('SQS').each(function(){
+        
+             $('#cboquestion').append($('<option></option>').val($(this).attr('Id')).html($(this).attr('Ques')));
+        });
+    
+    
+    }
+    function validateForgotpassNew()
+    {
+        var txtusername = $('#txtusername').val();
+        txtusername = txtusername.toLowerCase();
+        
+        var txtemailid = $('#txtemailid').val();
+        
+        
+        
+        if(txtusername == "")
+        {
+            document.getElementById('dvmsgpopup').innerHTML = 'User Name Required';
+            showalertpopup();
+			//alert("Kindly Enter User Name");
+            
+        }
+//        else if (( txtusername == "") || (( txtusername.indexOf("vh10-enrno") < 0) && ( txtusername.indexOf("vh10-empno") < 0)  && ( txtusername.indexOf("vh10-fthno") < 0) && ( txtusername.indexOf("vh10-mthno") < 0) && ( txtusername.indexOf("vh10-grdno") < 0) ))
+        else if (( txtusername == "") || (( txtusername.indexOf("-enrno") < 0) && ( txtusername.indexOf("-empno") < 0)  && ( txtusername.indexOf("-fthno") < 0) && ( txtusername.indexOf("-mthno") < 0) && ( txtusername.indexOf("-grdno") < 0) ))
+        {
+            document.getElementById('dvmsgpopup').innerHTML = 'Valid User Name Required';
+            showalertpopup();
+			//alert("Enter Valid User Name !");
+            
+        }
+        else if(!(validate_email(txtemailid)))
+        {
+             document.getElementById('dvmsgpopup').innerHTML = 'Valid Email ID Required';
+	         showalertpopup();
+			//alert("Kindly Enter Proper Email ID");
+        
+        }
+        else
+        {
+            showloader();
+            CheckforgotpasswordNew();
+        
+        }
+    }
+    function showalertpopup()
+	{
+
+		document.getElementById('dvSavedSuccesfully').style.display = 'block';
+
+	}
+   function validate_email(id)
+    {
+       
+        
+        var smailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        
+        if(id.match(smailformat))
+        {
+            
+            return true;
+        }
+        else
+        {
+           
+            return false;
+        }
+    } 
+    function validateForgotpass()
+    {
+        var cboquestion = $('#cboquestion :selected').val();
+        var txtans = $('#txtans').val();
+        var txtusername = $('#txtusername').val();
+        txtusername = txtusername.toLowerCase();
+        if(cboquestion == "0")
+        {
+            document.getElementById('dvmsgpopup').innerHTML = 'Secuirity Question Required';
+	         showalertpopup();
+			//alert("Kindly Select Secuirity Question");
+        
+        }
+        else if(txtans == "")
+        {   
+            document.getElementById('dvmsgpopup').innerHTML = 'Secuirity Answer Required';
+	         showalertpopup();
+			//alert("Kindly Enter Secuirity Answer");
+        }
+        else if(txtusername == "")
+        {
+             document.getElementById('dvmsgpopup').innerHTML = 'User Name Required';
+	         showalertpopup();
+			//alert("Kindly Enter User Name");
+            
+        }
+        else if (( txtusername == "") || (( txtusername.indexOf(code + "-enrno") < 0) && ( txtusername.indexOf(code + "-empno") < 0)  && ( txtusername.indexOf(code + "-fthno") < 0) && ( txtusername.indexOf(code + "-mthno") < 0) && ( txtusername.indexOf(code + "-grdno") < 0) ))
+        {
+            document.getElementById('dvmsgpopup').innerHTML = 'Valid User Name Required';
+	         showalertpopup();
+			//alert("Enter Valid User Name !");
+            
+        }
+        
+        else
+        {
+            showloader();
+            Checkforgotpassword();
+        
+        }
+    }
+    function CheckforgotpasswordNew()
+    {
+    
+        var txtusername = $('#txtusername').val();
+        var txtemailid = $('#txtemailid').val();
+        
+        $.ajax({
+                type: 'POST', 
+                url: ('Data/OnlineDataPage.aspx'),
+                dataType: 'xml',
+                data: {
+                    datasrc : 'data',
+                    view: 'html',
+                    Username : txtusername,
+                    Emailid : txtemailid,
+                    isforgotpass: 'yes',
+                    action : 'SelectForgotPassWordNew'
+                },
+                success: function(doc) 
+                {
+                   
+                   hideloader();
+                   if($(doc).find('XML').attr('msg') == "Mail Sent")
+                   {
+                        $('#dvYesNoConfirmation').hide();
+                        cleardata();
+                   }
+                    document.getElementById('dvmsgpopup').innerHTML = $(doc).find('XML').attr('msg');
+			        showalertpopup();
+				   //alert($(doc).find('XML').attr('msg'));
+                   
+                   Createnationalcombo(doc);
+                },
+                error: function (xhr, ajaxOptions, thrownError) 
+                {  
+                        hideloader();
+                        //alert(xhr.status);
+                        alert(xhr.responseText);
+                        //alert(ajaxOptions);
+                        //alert(xhr);
+                        //alert(thrownError);
+                  }
+            });
+    
+    
+    }
+    
+    function Checkforgotpassword()
+    {
+    
+        var cboquestion = $('#cboquestion :selected').text();
+        var txtans = $('#txtans').val();
+        var txtusername = $('#txtusername').val();
+        
+        $.ajax({
+                type: 'POST', 
+                url: ('Data/OnlineDataPage.aspx'),
+                dataType: 'xml',
+                data: {
+                    datasrc : 'data',
+                    view: 'html',
+                    Question : cboquestion,
+                    Answer : txtans,
+                    Username : txtusername,
+                    isforgotpass: 'yes',
+                    action : 'SelectForgotPassWord'
+                },
+                success: function(doc) 
+                {
+                   
+                   hideloader();
+                   if($(doc).find('XML').attr('msg') == "Mail Sent")
+                   {
+                        $('#dvYesNoConfirmation').hide();
+                        cleardata();
+                   }
+                   
+				   //alert($(doc).find('XML').attr('msg'));
+                   document.getElementById('dvmsgpopup').innerHTML = $(doc).find('XML').attr('msg');
+			        showalertpopup();
+                   Createnationalcombo(doc);
+                },
+                error: function (xhr, ajaxOptions, thrownError) 
+                {  
+                        hideloader();
+                        //alert(xhr.status);
+                        alert(xhr.responseText);
+                        //alert(ajaxOptions);
+                        //alert(xhr);
+                        //alert(thrownError);
+                  }
+            });
+    
+    
+    }
+    function cleardata()
+    {   
+    
+        //var cboquestion = $('#cboquestion :selected').text();
+        $('#txtemailid').val('');
+        $('#txtusername').val('');
+    
+    }
+    
+    var othapp=null;
+    
+    function validatelogin()
+    {
+        var userlogin = $("#username").val().toLowerCase();
+        var Centercode = userlogin.split("-");
+        code = Centercode[0];
+        
+//        if (( userlogin == "") || (( userlogin.indexOf("vh10-enrno") < 0) && ( userlogin.indexOf("vh10-empno") < 0) && ( userlogin.indexOf("vh10-appno") < 0) && ( userlogin.indexOf("vh10-fthno") < 0) && ( userlogin.indexOf("vh10-mthno") < 0) && ( userlogin.indexOf("vh10-grdno") < 0) ))
+        if (( userlogin == "") || (( userlogin.indexOf(code + "-enrno") < 0) && ( userlogin.indexOf(code + "-empno") < 0) && ( userlogin.indexOf(code + "-appno") < 0) && ( userlogin.indexOf(code + "-fthno") < 0) && ( userlogin.indexOf(code + "-mthno") < 0) && ( userlogin.indexOf(code + "-grdno") < 0) ))
+        {
+             document.getElementById('dvmsgpopup').innerHTML = 'Valid User Name Required';
+			 showalertpopup();
+			//alert("enter valid student login !");
+            return false;
+        }
+        else if ( $("#password").val() == "")
+        {
+            document.getElementById('dvmsgpopup').innerHTML = 'Password Required';
+			 showalertpopup();
+			//alert("enter password !");
+            return false;
+        }
+        else
+        {
+            erplogin();
+            
+            //DoFBlogin(othapp, false)
+        }
+    }
+    
+    
+    
+    function erplogin()
+    {
+		
+        showloader();
+        $.ajax({
+                type: 'POST', 
+                url: ('data/' + 'OnlineDataPage.aspx'),
+                dataType: 'xml',
+                data: {
+                    user: $("#username").val().toUpperCase(),
+                    psw: $("#password").val(),
+                    datasrc : 'data',
+                    action : 'Dologin'
+                },
+                success: function(doc) 
+                {
+                
+                    //alert($(doc).find('User'));
+                    var role = $(doc).find('User').attr('Rolename').toLowerCase();
+                    
+                    remember_me();
+                    if ((role.indexOf("student") > -1) || (role.indexOf("registered parents") > -1))
+                    {
+						var Str = new Array();
+						//alert(1);
+						//poptastic1("shtmlv4/main.aspx");
+						
+						var flag = '';
+					    var flag2 = '0';
+					    var flag3 = '0';
+					    var flag4 = '0';
+					    //alert(flag);
+					    //alert(flag2);
+					    if ($(doc).find('User').attr('rid')==null || $(doc).find('User').attr('rid')==undefined || $(doc).find('User').attr('rid')=='undefined')
+					    {
+							flag = 'true';
+					    }
+					    else
+					    {
+							flag = 'false';
+							flag2 = $(doc).find('User').attr('rid').toLowerCase()
+							flag3 = $(doc).find('User').attr('frc').toLowerCase()
+							//flag4 = $(doc).find('User').attr('verifed').toLowerCase()
+					    }
+					    
+					    
+					    if (flag.toLowerCase() == 'true' || flag2 == 0)
+					    {
+							poptastic1("shtmlv4/main.aspx");
+						}
+						else if (flag.toLowerCase() == 'false' && flag2 != 0 )
+						{
+							poptastic1("shtmlv4/"+$(doc).find('User').attr('tg1').toLowerCase());
+						}
+						else{
+							poptastic1("shtmlv4/main.aspx");
+						}
+                    }
+					else
+					{
+						/*
+						var Str = new Array();
+					    Str["username"] = $("#username").val();
+					    Str["password"] = $("#password").val();
+					    
+					    NewFile(Str, 'flv1/launch.aspx');
+					    */
+					    var flag = '';
+					    var flag2 = '0';
+					    var flag3 = '0';
+					    var flag4 = '0';
+					    //alert(flag);
+					    //alert(flag2);
+					    if ($(doc).find('User').attr('rid')==null || $(doc).find('User').attr('rid')==undefined || $(doc).find('User').attr('rid')=='undefined')
+					    {
+							flag = 'true';
+					    }
+					    else
+					    {
+							flag = 'false';
+							flag2 = $(doc).find('User').attr('rid').toLowerCase()
+							flag3 = $(doc).find('User').attr('frc').toLowerCase()
+							//flag4 = $(doc).find('User').attr('verifed').toLowerCase()
+					    }
+					    
+					    
+					    if (flag.toLowerCase() == 'true' || flag2 == 0)
+					    {
+							poptastic1("shtmlv4/main.aspx");
+						}
+						else if (flag.toLowerCase() == 'false' && flag2 != 0 )
+						{
+							poptastic1("shtmlv4/"+$(doc).find('User').attr('tg1').toLowerCase());
+						}
+						else{
+							poptastic1("shtmlv4/main.aspx");
+						}
+					}
+					//hideloader();
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                
+						//alert(xhr.responseText);
+                        if (xhr.responseText == "-1")
+                        {
+                            document.getElementById('dvmsgpopup').innerHTML = 'Invalid login!';
+							showalertpopup();
+							//alert("Invalid login!");    
+                        }
+						hideloader();
+                 }
+            });
+    }
+    
+    function CheckUsername()
+    {
+        var userlogin = $("#username").val().toLowerCase();
+        var Centercode = userlogin.split("-");
+        var url = ''
+        code = Centercode[0];
+        
+//        if (( userlogin == "") || (( userlogin.indexOf("vh10-enrno") < 0) && ( userlogin.indexOf("vh10-empno") < 0) && ( userlogin.indexOf("vh10-appno") < 0) && ( userlogin.indexOf("vh10-fthno") < 0) && ( userlogin.indexOf("vh10-mthno") < 0) && ( userlogin.indexOf("vh10-grdno") < 0) ))
+        if (( userlogin == "") || (( userlogin.indexOf(code + "-enrno") < 0) && ( userlogin.indexOf(code + "-empno") < 0) && ( userlogin.indexOf(code + "-appno") < 0) && ( userlogin.indexOf(code + "-fthno") < 0) && ( userlogin.indexOf(code + "-mthno") < 0) && ( userlogin.indexOf(code + "-grdno") < 0) ))
+        {
+             document.getElementById('dvmsgpopup').innerHTML = 'Valid User Name Required';
+			 showalertpopup();
+			//alert("enter valid student login !");
+            return false;
+        }
+        
+        else
+        {
+            url = 'http://vector.vibgyorhigh.com/index.php?module=student_parent&action=student_info&enrollment_no='+ $("#username").val().toLowerCase()+'&type=parent';
+            poptastic1(url)
+        }   
+            //DoFBlogin(othapp, false)       
+    }
+    
+     
+    
+    
+    function DoFBlogin(obj, direct)
+    {
+        
+        
+        var user, psw, fblogin;
+        
+        if (direct == false)
+        {
+            user= $("#username").val().toUpperCase();
+            psw= $("#password").val();
+            fblogin="fblogin";
+        }
+        else
+        {
+            user= "";
+            psw= "";
+            othapp = obj;
+            fblogin = "fblogin";
+        }
+        //alert("0");
+        //showloader();
+        //alert("1");
+        $.ajax({
+                type: 'POST', 
+                url: ('data/' + 'OnlineDataPage.aspx'),
+                dataType: 'xml',
+                data: {
+                    user : user,
+                    psw : psw,
+                    AppUserID : othapp.id,
+                    AppotherInfo : "",
+                    datasrc : 'data',
+                    fblogin : fblogin,
+                    action : 'DoFBlogin'
+                },
+                success: function(doc) 
+                {
+                    //alert("2");
+                    var role = $(doc).find('User').attr('Rolename').toLowerCase();
+                    alert(role);
+                    if (role=="mappingid required")
+                    {
+                        alert("Enter Username and Password");
+                    }
+                    else
+                    {
+                        //remember_me();
+                        if ((role.indexOf("student") > -1) || (role.indexOf("registered parents") > -1))
+                        {
+						    var Str = new Array();
+						    poptastic1("shtmlv4/main.aspx");
+                        }
+					    else
+					    {
+						    /*
+						    var Str = new Array();
+					        Str["username"] = $("#username").val();
+					        Str["password"] = $("#password").val();
+    					    
+					        NewFile(Str, 'flv1/launch.aspx');
+					        */
+					        poptastic1("shtmlv4/main.aspx");
+    					
+					    }
+					    //hideloader();
+					}
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert("3");
+						//alert(xhr.responseText);
+                        if (xhr.responseText == "-1")
+                        {
+                            document.getElementById('dvmsgpopup').innerHTML = 'Invalid login!';
+							showalertpopup();
+							//alert("Invalid login!");    
+                        }
+						hideloader();
+                 }
+            });
+    }
+    
+    
+            function remember_me()
+            {
+               var c = $("#check"); //INPUT CHECKBOX
+
+               //IF CHECKBOX IS SET, COOKIE WILL BE SET
+               if(c.is(":checked")){
+                 var u = $("#username").val(); //VALUE OF USERNAME
+                 var p = $("#password").val(); //VALUE OF PASSWORD
+                 $.cookie("CKusername", u, { expires: 3650 }); //SETS IN DAYS (10 YEARS)
+                 $.cookie("CKpassword", p, { expires: 3650 }); //SETS IN DAYS (10 YEARS)
+               }
+               //$.cookie("c1", null, { path: '/' });
+               $.cookie( "c1", null );  // delete the cookie
+				
+            }
+           function NewFile(param, url)
+           {
+              OpenWindowWithPost(url, 
+              'width=' + screen.width + ',height=' + screen.height + ',left=0,top=0,resizable=yes,scrollbars=no', 
+              '_self', param);
+           }
+            
+           function OpenWindowWithPost(url, windowoption, name, params)
+           {
+                    url = url + '?';
+                    for (var i in params) {
+                            
+                        if (params.hasOwnProperty(i)) {
+                        
+                            url = url + i + '=' + params[i] + '&'        
+                
+                            if (i == 'Code')
+                            {
+                                parent.document.title=params[i];
+                            }
+                        }
+                    }
+                    
+                    poptastic1(url);
+            }
+         
+           
+            function poptastic1(url)
+            {
+	            newwindow=window.open(url,'_self','left=0,top=0,resizable=no,scrollbars=no,status=no,location=no,toolbar=no,menubar=no,directories=no,dependent=no,fullscreen=yes');
+	            if (window.focus) {newwindow.focus()}
+            }
+        
+    </script>
+                     
+</body>
+</html>
