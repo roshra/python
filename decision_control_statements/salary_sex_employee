@@ -1,0 +1,22 @@
+#!/usr/local/bin/python3
+# Take input of employee name and sex
+emp_sal = int(input("salary of employeei : "))
+emp_sex = input("sex of employee m or f : ")
+if (emp_sex == 'f'):
+    f_bonus = 10/100 * emp_sal
+    f_total_sal = emp_sal + f_bonus
+    print("{female} employee total salary is {f_total_sal}".format(female="female", f_total_sal = f_total_sal))
+
+
+else:    
+    m_bonus = 5/100 * emp_sal
+    m_total_sal = emp_sal + m_bonus
+    print("{male} employee total salary is {m_total_sal}".format(male="male", m_total_sal = m_total_sal))
+
+
+
+if (emp_sal < 10000):
+    bonus_sal = 2/100 * emp_sal
+    total_sal_with_bonus = emp_sal + bonus_sal
+    print("{emp_sex} salary is less than 10,000 and 2 percentage extra")
+

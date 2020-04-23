@@ -1,0 +1,9 @@
+#!/usr/local/bin/python3
+
+ch = input("enter a character: ")
+if(ch >='A' and ch <='Z'):
+    lower = ch.lower()
+    print("charecter converted to lower case {}".format(lower))
+else:
+    upper = ch.upper()
+    print("character converted to upper case {}".format(upper))

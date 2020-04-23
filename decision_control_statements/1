@@ -1,0 +1,15 @@
+#!/user/local/bin/python
+# python dict, key value pair
+
+days_dict = {
+"1":"sunday",
+"2":"monday",
+"3":"tuesday",
+"4":"wednesday",
+"5":"thursday",
+"6":"friday",
+"7":"saterday"
+}
+
+num = int(input("Enter number between 1-7 to know day of week: "))
+print("{day} is the {num}rd day of the week".format(day= print('"%s"',%days_dict[num]), num=num))
